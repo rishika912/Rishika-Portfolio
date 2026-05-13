@@ -1,30 +1,43 @@
 export default function Navbar({ currentView, setView }) {
   return (
-    <nav className="w-full flex justify-center pt-8 pb-4 relative z-50">
-      <div className="flex font-['Urbanist',sans-serif]">
-        {/* Rishika Button - Dark Navy */}
+    <nav className="flex justify-center w-full pt-6 pb-0 mb-0 relative z-50 font-['Urbanist',sans-serif]">
+      
+      {/* Outer Container: The overall Orange Pill */}
+      <div className="relative w-[380px] h-[60px] bg-[#F2854A] rounded-full shadow-sm flex overflow-hidden cursor-pointer">
+        
+        {/* Sliding Navy Background Pill */}
+        {/* The 'left' property changes dynamically based on the currentView state */}
+        <div 
+          className="absolute top-0 bottom-0 w-[55%] bg-[#1C2A43] rounded-full transition-all duration-300 ease-in-out z-0"
+          style={{
+            left: currentView === 'rishika' ? '0%' : '45%',
+          }}
+        ></div>
+
+        {/* Rishika Button */}
         <button 
           onClick={() => setView('rishika')}
-          className={`flex items-center gap-2 px-8 py-3 rounded-l-full text-[15px] font-bold transition-all ${
-            currentView === 'rishika' ? 'bg-[#1C2A43] text-white' : 'bg-[#1C2A43]/80 text-white hover:bg-[#1C2A43]'
-          }`}
+          className="flex-1 flex items-center justify-center gap-2.5 text-lg font-bold z-10 text-white transition-colors"
         >
-          {/* Orange Splash Icon Placeholder */}
-          <div className="w-5 h-5 bg-[#F2854A] rounded-full flex items-center justify-center overflow-hidden">
-             <span className="text-white text-[10px]">R</span>
+          {/* Circular Icon - Fades to semi-transparent when inactive so it doesn't clash with the orange */}
+          <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-300 ${
+            currentView === 'rishika' ? 'bg-[#F2854A]' : 'bg-white/30'
+          }`}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.43 4 16.05 4 12C4 7.95 7.05 4.57 11 4.07V19.93ZM13 4.07C16.95 4.57 20 7.95 20 12C20 16.05 16.95 19.43 13 19.93V4.07Z"/>
+            </svg>
           </div>
           Rishika
         </button>
-        
-        {/* Projects Button - Orange */}
+
+        {/* Projects Button */}
         <button 
           onClick={() => setView('projects')}
-          className={`px-8 py-3 rounded-r-full text-[15px] font-bold transition-all ${
-            currentView === 'projects' ? 'bg-[#F2854A] text-white' : 'bg-[#F2854A]/90 text-white hover:bg-[#F2854A]'
-          }`}
+          className="flex-1 flex items-center justify-center text-lg font-bold z-10 text-white transition-colors"
         >
           Projects
         </button>
+
       </div>
     </nav>
   );

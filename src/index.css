@@ -3,3 +3,188 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* This overrides any default Vite container limits and forces the background color */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFF8F3;
+}
+
+#root {
+  max-width: none; /* Kills the default Vite box */
+}
+
+/* 1. MAKE URBANIST THE GLOBAL DEFAULT */
+/* This means if you don't specify a font, it will automatically be Urbanist! */
+@theme {
+  --font-sans: 'Urbanist', sans-serif;
+}
+
+/* 2. FORCE TAILWIND TO CREATE THESE UTILITY CLASSES */
+@utility font-urbanist { font-family: 'Urbanist', sans-serif; }
+@utility font-neue { font-family: 'Neue Reman Gt', sans-serif; }
+@utility font-neutraface { font-family: 'Neutraface Text', serif; }
+@utility font-poppins { font-family: 'Poppins', sans-serif; }
+@utility font-peroxidase { font-family: 'Peroxidase', sans-serif; }
+@utility font-proda { font-family: 'Proda Sans', sans-serif; }
+@utility font-ginder { font-family: 'Nt Ginder', sans-serif; }
+@utility font-causten { font-family: 'Causten', sans-serif; }
+@utility font-katari { font-family: 'Katari', sans-serif; }
+@utility font-lato { font-family: 'Lato', sans-serif; }
+@utility font-blacknorth { font-family: 'Black North', sans-serif; }
+@utility font-shree { font-family: 'Shree Dev', sans-serif; }
+@utility font-rangoflys { font-family: 'UT Rangoflys', sans-serif; }
+@utility font-zivon { font-family: 'Zivon', sans-serif; }
+@utility font-helvetica { font-family: 'Helvetica Custom', sans-serif; }
+
+/* =========================================
+   3. LOAD ALL 23 FONT FILES 
+   (Keep all your @font-face rules exactly as they were below this line!)
+   ========================================= */
+
+/* =========================================
+   2. LOAD ALL 23 FONT FILES
+   ========================================= */
+
+/* --- URBANIST (3 files) --- */
+@font-face {
+  font-family: 'Urbanist';
+  src: url('/fonts/Urbanist-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Urbanist';
+  src: url('/fonts/Urbanist-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Urbanist';
+  src: url('/fonts/Urbanist-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+/* --- NEUE REMAN GT (6 files total, combined into 4 weights) --- */
+@font-face {
+  font-family: 'Neue Reman Gt';
+  src: url('/fonts/NeueRemanGt-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Neue Reman Gt';
+  src: url('/fonts/NeueRemanGt-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Neue Reman Gt';
+  /* Combined your .otf and .ttf files here! */
+  src: url('/fonts/NeueRemanGt-SemiBold.otf') format('opentype'),
+       url('/fonts/NeueRemanGt-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Neue Reman Gt';
+  /* Combined your .otf and .ttf files here! */
+  src: url('/fonts/NeueRemanGt-Bold.otf') format('opentype'),
+       url('/fonts/NeueRemanGt-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+/* --- NEUTRAFACE (1 file) --- */
+@font-face {
+  font-family: 'Neutraface Text';
+  src: url('/fonts/Neutraface Text Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
+/* --- POPPINS (1 file) --- */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+/* --- PRODA SANS (1 file) --- */
+@font-face {
+  font-family: 'Proda Sans';
+  src: url('/fonts/ProdaSans-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+/* --- PEROXIDASE (2 files) --- */
+@font-face {
+  font-family: 'Peroxidase';
+  src: url('/fonts/Peroxidase-Thin.ttf') format('truetype');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Peroxidase';
+  src: url('/fonts/Peroxidase-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+/* --- NT GINDER (1 file) --- */
+@font-face {
+  font-family: 'Nt Ginder';
+  src: url('/fonts/Nt Ginder Mini Edition.otf') format('opentype');
+  font-weight: 400;
+}
+
+/* --- CAUSTEN (1 file) --- */
+@font-face {
+  font-family: 'Causten';
+  src: url('/fonts/Causten Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+/* --- KATARI (1 file) --- */
+@font-face {
+  font-family: 'Katari';
+  src: url('/fonts/Katari.otf') format('opentype');
+  font-weight: 400;
+}
+
+/* --- LATO (1 file) --- */
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+/* --- BLACK NORTH (1 file) --- */
+@font-face {
+  font-family: 'Black North';
+  src: url('/fonts/Blacknorthdemo-mLE25 2.otf') format('opentype');
+  font-weight: 400;
+}
+
+/* --- SHREE DEV (1 file) --- */
+@font-face {
+  font-family: 'Shree Dev';
+  src: url('/fonts/S07330F2.TTF') format('truetype');
+  font-weight: 400;
+}
+
+/* --- UT RANGOFLYS (1 file) --- */
+@font-face {
+  font-family: 'UT Rangoflys';
+  src: url('/fonts/UtRangoflysDemoRegular-Zpqpx.otf') format('opentype');
+  font-weight: 400;
+}
+
+/* --- ZIVON (1 file) --- */
+@font-face {
+  font-family: 'Zivon';
+  src: url('/fonts/Zivon Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+/* --- HELVETICA (1 file) --- */
+@font-face {
+  font-family: 'Helvetica Custom';
+  src: url('/fonts/Helvetica.ttf') format('truetype');
+  font-weight: 400;
+}
+

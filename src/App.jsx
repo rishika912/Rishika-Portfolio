@@ -14,10 +14,10 @@ function App() {
   const [view, setView] = useState('rishika');
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA]">
+    <div className="min-h-screen bg-[#FFF8F3] font-urbanist antialiased text-[#1C2A43]">
       <Navbar currentView={view} setView={setView} />
       
-      <main className="pt-24 pb-0">
+      <main className="pt-16 pb-0">
         {view === 'rishika' ? (
           <div className="animate-fadeIn">
             <Hero />
