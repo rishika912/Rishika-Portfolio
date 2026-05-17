@@ -1,20 +1,95 @@
-import clientLogos from '../assets/clients.png';
+import clientLogos from "../assets/clients.jpg";
 
 export default function Clients() {
   return (
-    <section className="py-12 bg-white">
-      <div className="max-w-5xl mx-auto px-8 text-center">
-        <h3 className="text-gray-400 font-medium mb-8 uppercase tracking-widest text-xs">
-          Clients I have worked with
-        </h3>
-        
-        {/* This displays the image you cropped from the PDF */}
-        <div className="flex justify-center items-center">
-          <img 
-            src={clientLogos} 
-            alt="Client Logos" 
-            className="max-w-full h-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+    <section className="relative w-full bg-[#F5F1EB] overflow-hidden py-6">
+
+      {/* TOP BORDER */}
+      <div className="absolute top-[22px] left-0 w-full h-[2px] bg-[#0D2748]" />
+
+      {/* BOTTOM BORDER */}
+      <div className="absolute bottom-[22px] left-0 w-full h-[2px] bg-[#0D2748]" />
+
+      {/* HEADING */}
+      <h2
+        className="
+          absolute
+          left-1/2
+          top-[58px]
+          -translate-x-1/2
+          z-30
+
+          text-[#0D2748]
+          text-[50px]
+          leading-none
+          font-ginder
+
+          whitespace-nowrap
+          pointer-events-none
+        "
+      >
+        Clients I have worked with
+      </h2>
+
+      {/* LOGO AREA */}
+      <div className="relative overflow-hidden">
+
+        {/* MOVING STRIP */}
+        <div className="flex animate-marquee whitespace-nowrap">
+
+          {/* IMAGE 1 */}
+          <img
+            src={clientLogos}
+            alt="Clients"
+            draggable="false"
+            className="
+            flex-shrink-0
+            
+
+            w-[2000px]
+h-[240px]
+max-w-none
+object-cover
+
+            grayscale
+            opacity-80
+
+            hover:grayscale-0
+            hover:opacity-100
+
+            transition-all
+            duration-500
+
+            select-none
+          "
           />
+
+          {/* IMAGE 2 */}
+          <img
+            src={clientLogos}
+            alt="Clients Duplicate"
+            draggable="false"
+            className="
+            flex-shrink-0
+
+            w-[2000px]
+h-[240px]
+max-w-none
+object-cover
+
+            grayscale
+            opacity-80
+
+            hover:grayscale-0
+            hover:opacity-100
+
+            transition-all
+            duration-500
+
+            select-none
+          "
+          />
+
         </div>
       </div>
     </section>

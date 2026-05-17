@@ -157,7 +157,7 @@ export default function FeaturedProjects() {
                     right-[214px]
                     bottom-[170px]
                     rotate-[-17deg]
-                    z-50
+                    z-40
                     shadow-[0_28px_45px_rgba(0,0,0,0.38)]
                   "
                 >
