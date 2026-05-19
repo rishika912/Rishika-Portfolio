@@ -1,9 +1,9 @@
 export default function Navbar({ currentView, setView }) {
   return (
-    <nav className="flex justify-center w-full pt-6 pb-0 mb-0 relative z-50 font-['Urbanist',sans-serif]">
+    <nav className="flex justify-center w-full pt-6 pb-0 mb-0 relative z-50 font-['Urbanist',sans-serif] translate-y-4">
       
       {/* Outer Container: The overall Orange Pill */}
-      <div className="relative w-[380px] h-[60px] bg-[#F2854A] rounded-full shadow-sm flex overflow-hidden cursor-pointer">
+      <div className="relative w-[420px] h-[65px] bg-[#F2854A] rounded-full shadow-sm flex overflow-hidden cursor-pointer">
         
         {/* Sliding Navy Background Pill */}
         {/* The 'left' property changes dynamically based on the currentView state */}
@@ -17,7 +17,7 @@ export default function Navbar({ currentView, setView }) {
         {/* Rishika Button */}
         <button 
           onClick={() => setView('rishika')}
-          className="flex-1 flex items-center justify-center gap-2.5 text-lg font-bold z-10 text-white transition-colors"
+          className="flex-1 flex items-center justify-center gap-2.5 text-[22px] font-neue font-medium z-10 tracking-[1px] translate-y-0.5 text-white transition-colors"
         >
           {/* Circular Icon - Fades to semi-transparent when inactive so it doesn't clash with the orange */}
           <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-300 ${
@@ -33,7 +33,7 @@ export default function Navbar({ currentView, setView }) {
         {/* Projects Button */}
         <button 
           onClick={() => setView('projects')}
-          className="flex-1 flex items-center justify-center text-lg font-bold z-10 text-white transition-colors"
+          className="flex-1 flex items-center justify-center text-[22px] font-neue font-medium z-10 tracking-[1px] translate-y-0.5 text-white transition-colors"
         >
           Projects
         </button>

@@ -7,35 +7,36 @@ export default function Hero() {
       {/* Center Header */}
       <div className="flex flex-col items-center text-center mb-2 mt-4 relative z-10">
 
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="text-[34px] font-medium text-[#1C2A43]">
-            Hello,
-          </span>
+      <div className="relative flex items-center font-urbanist tracking-[-1px] justify-center mb-2 w-fit">
+    <span className="text-[30px] font-semibold text-[#1C2A43]">
+      Hello,
+    </span>
 
-          <svg
-            width="28"
-            height="24"
-            viewBox="0 0 24 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="-mt-2"
-          >
-            <path
-              d="M13 3.5C16 7.5 23 6.5 23 6.5C23 6.5 17 11.5 12 7.5C8 3.5 13 3.5 13 3.5Z"
-              fill="#F2854A"
-            />
-            <path
-              d="M4.5 11.5C8.5 16.5 16 15.5 16 15.5C16 15.5 9 20.5 4.5 16.5C0.5 12.5 4.5 11.5 4.5 11.5Z"
-              fill="#F2854A"
-            />
-          </svg>
+    {/* 2. Added 'absolute' and '-right-10'. This takes the icon out of the flow so it doesn't push the text! */}
+    <svg
+      width="28"
+      height="24"
+      viewBox="0 0 24 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="absolute -right-10 -mt-2" 
+    >
+      <path
+        d="M13 3.5C16 7.5 23 6.5 23 6.5C23 6.5 17 11.5 12 7.5C8 3.5 13 3.5 13 3.5Z"
+        fill="#F2854A"
+      />
+      <path
+        d="M4.5 11.5C8.5 16.5 16 15.5 16 15.5C16 15.5 9 20.5 4.5 16.5C0.5 12.5 4.5 11.5 4.5 11.5Z"
+        fill="#F2854A"
+      />
+    </svg>
         </div>
 
-        <h1 className="text-6xl md:text-[5rem] font-medium text-[#1C2A43] mb-3 tracking-tight">
-          I'm <span className="text-[#F2854A] font-bold">Rishika Jain,</span>
+        <h1 className="text-6xl md:text-[3.5rem] font-neue font-medium text-[#1C2A43] mb-3 tracking-tight">
+          I'm <span className="text-[#F2854A] font-medium">Rishika Jain,</span>
         </h1>
 
-        <h2 className="text-[3rem] leading-none font-medium text-[#1C2A43] tracking-tight">
+        <h2 className="text-[3.2rem] leading-none font-ginder font-medium text-[#1C2A43] tracking">
           Visual Communication Designer
         </h2>
       </div>
@@ -44,15 +45,15 @@ export default function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-[300px_auto_300px] gap-8 lg:gap-12 items-end justify-center w-full relative z-20">
 
         {/* LEFT */}
-        <div className="flex flex-col justify-end w-full pb-8 pl-4 lg:pl-6">
+        <div className="flex flex-col justify-end w-full pb-8 pl-4 lg:pl-0">
 
-          <div className="relative mb-12">
+          <div className="relative mb-10 left-16">
 
-            <div className="absolute -top-12 left-0 text-[75px] text-[#1C2A43] font-serif leading-none">
+            <div className="absolute -top-14 -left-1 text-[180px] text-[#1C2A43] font-neue leading-none">
               “
             </div>
 
-            <p className="text-[#1C2A43] text-[16px] leading-[1.6] font-medium">
+            <p className="text-[#1C2A43] text-[20px] text-ginder leading-[1.2] font-neue font-normal">
               I enjoy collaborating with teams
               <br />
               and creating design solutions
@@ -63,7 +64,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 translate-x-14">
 
             <div className="flex items-center gap-5">
 
