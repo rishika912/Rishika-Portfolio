@@ -28,7 +28,7 @@ function App() {
             <div className="relative overflow-visible">
 
               {/* CONNECTED SCRIBBLE */}
-              <div className="hidden lg:block absolute right-[120px] top-[580px] scale-85 z-[25] -rotate-[25deg]">
+              <div className="hidden lg:block absolute right-[150px] top-[550px] scale-85 z-[25] -rotate-[25deg]">
 
                 <svg
                   width="250"
@@ -388,7 +388,7 @@ function App() {
       <h3
         className="
           text-[#0D2748]
-          text-[40px]
+          text-[36px]
           font-light
           -mt-[28px] /* Pushed it down slightly so it perfectly aligns with the left side */
           mb-[96px]
@@ -396,7 +396,7 @@ function App() {
           whitespace-nowrap
         "
       >
-        I’d love to be part of the journey.
+        Let's build something worth remembering.
       </h3>
 
       {/* FORM */}

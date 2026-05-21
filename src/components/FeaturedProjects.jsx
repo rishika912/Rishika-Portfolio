@@ -3,55 +3,52 @@ import React from "react";
 export default function FeaturedProjects() {
   return (
     <section className="w-full bg-[#FFF8F3] py-5 px-4 lg:px-8 overflow-visible font-urbanist">
-      <div className="max-w-[1180px] mx-auto relative">
+      
+      {/* 1. WIDTH CONTROLLER */}
+      {/* CHANGED: max-w-[1180px] to max-w-[1400px] */}
+      <div className="max-w-[1300px] mx-auto relative">
 
-        
+        {/* MAIN CONTAINER */}
+        {/* 2. HEIGHT CONTROLLER */}
+        {/* CHANGED: min-h-[615px] to min-h-[750px] */}
+        <div className="relative min-h-[700px] drop-shadow-[0_18px_40px_rgba(0,0,0,0.08)] overflow-visible">
 
-        {/* MAIN CONTAINER 
-            - Removed overflow-hidden and standard box-shadow.
-            - Switched to Tailwind's drop-shadow filter which perfectly traces the custom shape! 
-        */}
-        <div className="relative min-h-[615px] drop-shadow-[0_18px_40px_rgba(0,0,0,0.08)] overflow-visible">
-
-          {/* MOBILE BACKGROUND (Simple Rectangle) */}
+          {/* MOBILE BACKGROUND */}
           <div className="absolute inset-0 bg-[#0E2747] rounded-[34px] lg:hidden z-0 pointer-events-none"></div>
 
-          {/* DESKTOP BACKGROUND (Flawless Unified Shape without White Masks) */}
+          {/* DESKTOP BACKGROUND */}
           <div className="absolute inset-0 hidden lg:block z-0 pointer-events-none">
-             {/* Left Column (Spans everything except the 340px cutout) */}
-             <div className="absolute top-0 left-0 right-[340px] bottom-0 bg-[#0E2747] rounded-tl-[34px] rounded-bl-[34px] rounded-tr-[34px]"></div>
+             {/* 1. LEFT COLUMN: Changed right-[340px] to right-[240px] */}
+<div className="absolute top-0 left-0 right-[450px] bottom-0 bg-[#0E2747] rounded-tl-[34px] rounded-bl-[34px] rounded-tr-[34px]"></div>
 
-             {/* Right Column (Starts below the cutout, includes the missing top-right rounded corner!) */}
-             <div className="absolute top-[98px] right-0 w-[340px] bottom-0 bg-[#0E2747] rounded-br-[34px] rounded-tr-[34px]"></div>
+{/* 2. RIGHT COLUMN: Changed w-[340px] to w-[240px] */}
+<div className="absolute top-[98px] right-0 w-[470px] bottom-0 bg-[#0E2747] rounded-br-[34px] rounded-tr-[34px]"></div>
 
-             {/* Inner Concave Curve (Seamlessly connects the two columns) */}
-             <div
-               className="absolute top-[64px] right-[306px] w-[34px] h-[34px]"
-               style={{ background: "radial-gradient(circle at 100% 0%, transparent 33.5px, #0E2747 34px)" }}
-             />
+{/* 3. CURVE: Changed right-[306px] to right-[206px] (240 - 34 = 206) */}
+<div
+  className="absolute top-[64px] right-[416px] w-[34px] h-[34px]"
+  style={{ background: "radial-gradient(circle at 100% 0%, transparent 33.5px, #0E2747 34px)" }}
+/>
           </div>
 
           <div className="relative z-20 flex flex-col lg:flex-row h-full">
 
             {/* LEFT CONTENT */}
-            <div className="w-full lg:w-[47%] px-10 lg:px-[70px] pt-[78px] pb-20 flex flex-col justify-between">
-
+            <div className="w-full lg:w-[47%] px-10 lg:px-[70px] pt-[78px] pb-20 flex flex-col justify-between translate-x-15">
               <div>
-                <h2 className="text-white text-[62px] leading-[0.95] tracking-[-2.6px] font-medium">
+                <h2 className="text-white text-[62px] leading-[0.95] font-causten translate-y-8">
                   Featured Projects
                 </h2>
 
-                <div className="mt-[175px] max-w-[430px]">
-
-                  <p className="text-white text-[22px] leading-[1.28] font-light tracking-[-0.2px]">
+                <div className="mt-[175px] max-w-[430px] translate-y-25">
+                  <p className="text-white text-[24px] leading-[1.28] font- font-ginder tracking-[1px]">
                     Behind every visual lies a process
                     of exploration, experimentation,
                     and storytelling.
                   </p>
-
-                  <p className="mt-10 text-white text-[22px] leading-[1.28] font-light tracking-[-0.2px]">
+                  <p className="mt-10 text-white text-[24px] leading-[1.28] font-light font-ginder tracking-[1px] whitespace-nowrap">
                     Discover how each idea evolved into a{" "}
-                    <span className="text-[#F08A42] font-medium">
+                    <span className="text-[#F08A42] font-medium font-ginder">
                       design solution.
                     </span>
                   </p>
@@ -59,11 +56,13 @@ export default function FeaturedProjects() {
               </div>
             </div>
 
-            {/* RIGHT SIDE */}
-            <div className="w-full lg:w-[53%] relative flex items-center justify-center pb-20 lg:pb-0">
+            {/* RIGHT SIDE (Cards) */}
+            {/* The rest of your code remains completely untouched... */}
+            <div className="w-full lg:w-[53%] top-20 right-10 relative flex items-center justify-center pb-20 lg:pb-0">
+               {/* ... Your card stack code ... */}
 
               {/* STACK AREA */}
-              <div className="relative w-[560px] h-[360px]">
+              <div className="relative w-[560px] h-[360px] scale-[1.1] lg:scale-[1.2] origin-center mt-10">
 
                 {/* PURPLE */}
                 <div

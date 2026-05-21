@@ -24,7 +24,7 @@ export default function CoreSkills() {
   ];
 
   return (
-    <section className="w-full bg-[#FFF8F3] overflow-hidden font-ginder pt-10 pb-16">
+    <section className="w-full bg-[#FFF8F3] overflow-hidden font-ginder pt-10 pb-0">
 
       <div className="relative w-full h-[380px] bg-[#F28E38] overflow-hidden">
 

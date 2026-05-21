@@ -31,7 +31,7 @@ export default function Experience() {
   ];
 
   return (
-    <section className="relative w-full bg-[#F5F1EB] overflow-hidden pt-24 pb-10 font-ginder">
+    <section className="relative w-full bg-[#F5F1EB] overflow-hidden pt-20 pb-10 font-ginder">
 
       {/* EXPANDED BOTTOM SHAPE */}
       {expanded && (

@@ -317,7 +317,7 @@ export default function Achievements() {
       {/* ================================================= */}
 
       {/* FIX: Removed overflow-hidden from here */}
-      <div className="relative pt-[40px] pb-[100px]">
+      <div className="relative pt-[80px] pb-[80px]">
         
 
         <div className="relative z-20 max-w-[1000px] mx-auto px-6 lg:px-12 text-center md:text-left right-[80px]">
@@ -326,26 +326,27 @@ export default function Achievements() {
             className="
               text-[#0D2748]
               text-[36px]
-              lg:text-[46px]
+              lg:text-[40px]
               leading-[1.3]
               font-neue
               right-[80px]
             "
           >
-            Looking for a{" "}
-            <span className="font-bold">
-              Passionate Designer
-            </span>
-
-            <br className="hidden md:block" />
-
-            to bring fresh ideas to your
+            Hiring a
 
             <br className="hidden md:block" />
 
             <span className="text-[#F28E38] font-bold text-[62px]">
-              Creative Team ?
+              Strategic Creative
             </span>
+
+            <br className="hidden md:block" />
+
+            who thinks in Systems and Designs with intent?
+
+            
+
+            
           </h2>
 
         </div>

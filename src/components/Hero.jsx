@@ -64,32 +64,32 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-10 translate-x-14">
+          <div className="flex flex-col gap-10 translate-x-14 translate-y-3">
 
             <div className="flex items-center gap-5">
 
-              <div className="border-b-[3px] border-[#F2854A] pb-1.5 px-1">
-                <span className="text-[80px] font-light text-[#1C2A43] leading-[0.75] tracking-tighter">
-                  15<span className="text-[50px] font-medium">+</span>
+              <div className="border-b-[3px] border-[#F2854A] pb-1.9 px-1">
+                <span className="text-[90px] font-medium text-[#1C2A43] leading-[0.75]  font-peroxidase">
+                  15<span className="text-[90px] font-medium ">+</span>
                 </span>
               </div>
 
-              <span className="text-[20px] text-[#1C2A43] leading-[1.15] font-medium">
+              <span className="text-[34px] text-[#1C2A43] leading-[1.15] font-light font-peroxidase">
                 Projects
                 <br />
                 Completed
               </span>
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-6 translate-y-3">
 
-              <div className="border-b-[3px] border-[#F2854A] pb-1.5 px-1 pr-4">
-                <span className="text-[80px] font-light text-[#1C2A43] leading-[0.75] tracking-tighter">
-                  9<span className="text-[50px] font-medium">+</span>
+              <div className="border-b-[3px] border-[#F2854A] pb-1.9 px-1 pr-4">
+                <span className="text-[90px] font-medium text-[#1C2A43] leading-[0.75] font-peroxidase">
+                  9<span className="text-[90px] font-medium">+</span>
                 </span>
               </div>
 
-              <span className="text-[20px] text-[#1C2A43] leading-[1.15] font-medium">
+              <span className="text-[34px] text-[#1C2A43] leading-[1.15] font-light font-peroxidase">
                 Clients
                 <br />
                 Served
@@ -114,55 +114,71 @@ export default function Hero() {
 
           <div className="flex items-center relative z-20 mt-2 translate-x-15">
 
-            <div className="flex items-center gap-2 bg-[#FFF8F3] rounded-full p-0 ring-[8px] ring-[#FFF8F3]">
+  <div className="flex items-center gap-2 bg-[#FFF8F3] rounded-full p-0 ring-[8px] ring-[#FFF8F3]">
 
-              <button className="px-10 py-2.5 rounded-full border-[1.5px] border-[#1C2A43] text-[#1C2A43] font-bold text-[25px] bg-[#FFF8F3]">
-                Porfolio
-              </button>
+    {/* PORTFOLIO BUTTON: Added flex for perfect text centering */}
+    <button className="px-10 py-2.5 rounded-full border-[1.5px] border-[#1C2A43] text-[#1C2A43] font-bold text-[25px] bg-[#FFF8F3] flex items-center justify-center">
+      Portfolio
+    </button>
 
-              <button className="px-10 py-2.5 rounded-full bg-[#F2854A] text-white font-bold text-[25px]">
-                Resume ↗
-              </button>
-            </div>
+    {/* RESUME BUTTON: Added transparent border, flex, and wrapped the arrow */}
+    <button className="px-10 py-2.5 rounded-full bg-[#F2854A] text-white font-bold text-[25px] border-[1.5px] border-transparent flex items-center justify-center gap-1">
+      Resume <span className="text-[28px] leading-none mb-1">↗</span>
+    </button>
+  </div>
 
-            <div className="flex gap-2 ml-6">
+            <div className="flex gap-4 ml-6 translate-x-7">
+  
+  {/* LinkedIn Button */}
+  <a 
+    href="https://www.linkedin.com/in/rishika-jain-9909r?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="w-12 h-12 rounded-full border-[3px] border-[#1C2A43] flex items-center justify-center font-bold text-[#1C2A43] text-[28px] bg-[#FFF8F3] hover:bg-[#1C2A43] hover:text-[#FFF8F3] transition-all duration-300"
+  >
+    in
+  </a>
 
-              <a className="w-11 h-11 rounded-full border-[1.5px] border-[#1C2A43] flex items-center justify-center font-bold text-[#1C2A43] text-[15px] bg-[#FFF8F3]">
-                in
-              </a>
-
-              <a className="w-11 h-11 rounded-full border-[1.5px] border-[#1C2A43] flex items-center justify-center font-bold text-[#1C2A43] text-[15px] bg-[#FFF8F3]">
-                Bē
-              </a>
-            </div>
+  {/* Behance Button */}
+  <a 
+    href="https://www.behance.net/rishikajain9909" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="w-12 h-12 rounded-full border-[3px] border-[#1C2A43] flex items-center justify-center font-bold text-[#1C2A43] text-[26px] bg-[#FFF8F3] hover:bg-[#1C2A43] hover:text-[#FFF8F3] transition-all duration-300"
+  >
+    Bē
+  </a>
+  
+</div>
           </div>
         </div>
 
         {/* RIGHT */}
         <div className="flex flex-col justify-end w-full pb-8 relative mb-15 -ml-30 pl-6">
 
-          <div className="flex items-baseline gap-3 mb-2">
-            <span className="text-[85px] font-light text-[#1C2A43] leading-none tracking-tighter">
+          <div className="flex items-baseline gap-3 font-peroxidase">
+            <span className="text-[85px] font-medium text-[#1C2A43] leading-none">
               6+
             </span>
 
-            <span className="text-[24px] text-[#1C2A43] font-medium pb-2">
+            <span className="text-[34px] text-[#1C2A43] font-light pb-2">
               Months
             </span>
           </div>
 
-          <p className="text-[15px] font-bold text-[#1C2A43] border-b-[3px] border-[#F2854A] pb-2.5 mb-6 w-[260px]">
-            Industry Experience in Design Agency
-          </p>
+          {/* Changed w-[260px] to w-max and added whitespace-nowrap */}
+<p className="text-[18px] font-neue font-medium text-[#1C2A43] border-b-[3px] border-[#F2854A] pb- mb-4 w-max whitespace-nowrap">
+  Industry Experience in Design Agency
+</p>
 
-          <div className="grid grid-cols-2 gap-y-3 gap-x-4 text-[15px] text-[#1C2A43] font-medium">
-            <div>✦ Branding</div>
-            <div>✦ Print Media</div>
-            <div>✦ Packaging</div>
-            <div>✦ UI Design</div>
-            <div>✦ Spatial Graphics</div>
-            <div>✦ Campaign</div>
-          </div>
+<div className="grid grid-cols-2 gap-y-1 gap-x-8 font-neue text-[18px] text-[#1C2A43] shrink-0 w-max whitespace-nowrap">
+  <div><span className="text-[#F2854A] mr-2">✦</span> Branding</div>
+  <div><span className="text-[#F2854A] mr-2">✦</span> Print Media</div>
+  <div><span className="text-[#F2854A] mr-2">✦</span> Packaging</div>
+  <div><span className="text-[#F2854A] mr-2">✦</span> UI Design</div>
+  <div><span className="text-[#F2854A] mr-2">✦</span> Spatial Graphics</div>
+  <div><span className="text-[#F2854A] mr-2">✦</span> Campaign</div>
+</div>
 
         </div>
       </div>
