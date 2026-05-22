@@ -2,13 +2,13 @@ import clientLogos from "../assets/clients.jpg";
 
 export default function Clients() {
   return (
-    <section className="relative w-full bg-[#F5F1EB] overflow-hidden py-6">
+    <section className="relative w-full bg-[#fff8f3] overflow-hidden py-6">
 
       {/* TOP BORDER */}
-      <div className="absolute top-[22px] left-0 w-full h-[2px] bg-[#0D2748]" />
+      <div className="absolute top-[22px] left-0 w-full h-[2px] bg-[#162a42]" />
 
       {/* BOTTOM BORDER */}
-      <div className="absolute bottom-[22px] left-0 w-full h-[2px] bg-[#0D2748]" />
+      <div className="absolute bottom-[22px] left-0 w-full h-[2px] bg-[#162a42]" />
 
       {/* HEADING */}
       <h2
@@ -19,7 +19,7 @@ export default function Clients() {
           -translate-x-1/2
           z-30
 
-          text-[#0D2748]
+          text-[#162a42]
           text-[50px]
           leading-none
           font-ginder

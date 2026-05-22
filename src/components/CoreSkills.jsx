@@ -24,11 +24,11 @@ export default function CoreSkills() {
   ];
 
   return (
-    <section className="w-full bg-[#FFF8F3] overflow-hidden font-ginder pt-10 pb-0">
+    <section className="w-full bg-[#fff8f3] overflow-hidden font-ginder pt-10 pb-0">
 
-      <div className="relative w-full h-[380px] bg-[#F28E38] overflow-hidden">
+      <div className="relative w-full h-[380px] bg-[#f98d3d] overflow-hidden">
 
-        <div className="absolute top-0 right-0 w-[60%] max-w-[850px] h-[130px] bg-[#FFF8F3] rounded-bl-[46px] z-10">
+        <div className="absolute top-0 right-0 w-[60%] max-w-[850px] h-[130px] bg-[#fff8f3] rounded-bl-[46px] z-10">
 
           <div
             className="
@@ -37,7 +37,7 @@ export default function CoreSkills() {
               -left-[46px]
               w-[46px]
               h-[46px]
-              bg-[#FFF8F3]
+              bg-[#fff8f3]
               overflow-hidden
             "
           >
@@ -45,7 +45,7 @@ export default function CoreSkills() {
               className="
                 absolute
                 inset-0
-                bg-[#F28E38]
+                bg-[#f98d3d]
                 rounded-tr-[46px]
               "
             />
@@ -111,8 +111,8 @@ export default function CoreSkills() {
                   left: skill.left,
                   bottom: skill.bottom, 
                   transform: `rotate(${skill.rotate})`,
-                  background: skill.dark ? "#0D2748" : "#FFF8F3",
-                  color: skill.dark ? "#FFF8F3" : "#0D2748",
+                  background: skill.dark ? "#162a42" : "#fff8f3",
+                  color: skill.dark ? "#fff8f3" : "#162a42",
                   zIndex: skill.zIndex,
                 }}
               >

@@ -31,26 +31,26 @@ export default function Experience() {
   ];
 
   return (
-    <section className="relative w-full bg-[#F5F1EB] overflow-hidden pt-20 pb-10 font-ginder">
+    <section className="relative w-full bg-[#fff8f3] overflow-hidden pt-20 pb-10 font-ginder">
 
       {/* EXPANDED BOTTOM SHAPE */}
       {expanded && (
         <div className="absolute left-0 bottom-0 z-0 pointer-events-none">
 
           {/* BOTTOM LONG RECTANGLE (Base Height is 280px) */}
-          <div className="w-[740px] h-[190px] bg-[#F7E1D4] rounded-tr-[42px]" />
+          <div className="w-[740px] h-[190px] bg-[#ffebde] rounded-tr-[42px]" />
 
           {/* TOP LEFT BLOCK 
               Starts exactly at bottom-[280px] so it sits perfectly on top of the horizontal block 
           */}
-          <div className="absolute left-0 bottom-[150px] w-[182px] h-[242px] bg-[#F7E1D4] rounded-tr-[42px]" />
+          <div className="absolute left-0 bottom-[150px] w-[182px] h-[242px] bg-[#ffebde] rounded-tr-[42px]" />
 
           {/* INNER CONNECTOR CURVE 
               Sits precisely in the corner (left 182px, bottom 280px) where the two blocks intersect.
           */}
-          <div className="absolute left-[182px] bottom-[190px] w-[42px] h-[42px] bg-[#F7E1D4]">
+          <div className="absolute left-[182px] bottom-[190px] w-[42px] h-[42px] bg-[#ffebde]">
             {/* The mask uses the page background color to carve out the perfect concave curve! */}
-            <div className="w-full h-full bg-[#F5F1EB] rounded-bl-[42px]" />
+            <div className="w-full h-full bg-[#fff8f3] rounded-bl-[42px]" />
           </div>
 
         </div>
@@ -61,7 +61,7 @@ export default function Experience() {
         {/* TITLE */}
         <div className="text-center">
           <h2 className="text-[#0D2748] text-[42px] lg:text-[58px] leading-none tracking-[2px] font-medium">
-            My Work Experience
+            Design Experience
           </h2>
 
           <p className="mt-2 text-[#0D2748] text-[36px] tracking-[3px] leading-none">

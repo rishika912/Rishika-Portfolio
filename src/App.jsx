@@ -9,6 +9,7 @@ import { Education } from './components/AboutSections';
 import CallToAction from './components/CallToAction';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
+import logo from "/logo.png";
 
 function App() {
   const [view, setView] = useState('rishika');
@@ -113,7 +114,7 @@ function App() {
     w-[60%]
     h-[110px]
 
-    bg-[#F5F1EB]
+    bg-[#fff8f3]
 
     rounded-bl-[42px]
 
@@ -131,7 +132,7 @@ function App() {
     w-[42px]
     h-[42px]
 
-    bg-[#F5F1EB]
+    bg-[#fff8f3]
 
     z-0
   "
@@ -176,7 +177,7 @@ function App() {
 
         <h2
           className="
-            text-[#F28E38]
+            text-[#f98d3d]
             text-[56px]
             mt-5
             font-ginder
@@ -203,51 +204,25 @@ function App() {
       {/* PROFILE */}
       <div className="mt-[70px] ml-27 flex items-center gap-4">
 
-        {/* ORANGE ICON */}
+        {/* LOGO ICON (Replaced the custom CSS shapes) */}
         <div
           className="
             w-[48px]
             h-[48px]
             rounded-full
-            bg-[#F28E38]
-
+            bg-[#f98d3d]
             flex
             items-center
             justify-center
+            overflow-hidden 
           "
         >
-          <div className="relative w-[22px] h-[22px] ">
-
-            <div
-              className="
-                absolute
-                left-0
-                bottom-0
-
-                w-[18px]
-                h-[9px]
-
-                bg-white
-                rounded-tl-full
-                rounded-br-full
-                rotate-[20deg]
-              "
-            />
-
-            <div
-              className="
-                absolute
-                right-0
-                top-0
-
-                w-[10px]
-                h-[10px]
-
-                bg-white
-                rounded-full
-              "
-            />
-          </div>
+          {/* Added your logo image here! */}
+          <img 
+            src={logo} 
+            alt="Rishika Logo" 
+            className="w-full h-full object-cover" 
+          />
         </div>
 
         <h3
@@ -277,9 +252,11 @@ function App() {
           font-neue
         "
       >
-        I'm currently open to opportunities in brand identity and
-        communication design. If you think I'd be a good fit for your
-        team or project, I'd be glad to connect.
+        Open to full-time roles and project<br></br>
+        collaborations in brand identity, communication
+        design, and UI/UX. If you're building a team that
+        values craft and strategic thinking, I'd like to be in
+        that conversation.
       </p>
 
       {/* EMAIL */}
@@ -306,7 +283,10 @@ function App() {
       <div className="mt-[34px] ml-27 flex items-center gap-5">
 
         {/* LINKEDIN */}
-        <button
+        <a
+          href="https://www.linkedin.com/in/rishika-jain-9909r?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          target="_blank"
+          rel="noopener noreferrer"
           className="
             w-[52px]
             h-[52px]
@@ -322,13 +302,20 @@ function App() {
             text-white
             text-[24px]
             font-bold
+
+            hover:scale-[1.05]
+            transition-all
+            duration-300
           "
         >
           in
-        </button>
+        </a>
 
         {/* BEHANCE */}
-        <button
+        <a
+          href="https://www.behance.net/rishikajain9909"
+          target="_blank"
+          rel="noopener noreferrer"
           className="
             w-[52px]
             h-[52px]
@@ -344,10 +331,14 @@ function App() {
             text-white
             text-[22px]
             font-bold
+
+            hover:scale-[1.05]
+            transition-all
+            duration-300
           "
         >
           Bē
-        </button>
+        </a>
 
         {/* RESUME */}
         <button
@@ -357,7 +348,7 @@ function App() {
             px-[34px]
             h-[52px]
 
-            bg-[#F28E38]
+            bg-[#f98d3d]
 
             rounded-full
 
@@ -400,7 +391,12 @@ function App() {
       </h3>
 
       {/* FORM */}
-      <form className="space-y-[24px]">
+      {/* UPDATE: Added action and method. Replace YOUR_FORM_ID with your Formspree ID */}
+      <form 
+        action="https://formspree.io/f/YOUR_FORM_ID" 
+        method="POST" 
+        className="space-y-[24px]"
+      >
 
         {/* ROW 1 */}
         <div className="grid grid-cols-2 gap-[18px]">
@@ -409,23 +405,11 @@ function App() {
             <label className="text-white text-[16px] mb-3 block">
               Your Name*
             </label>
-
             <input
               type="text"
-              className="
-                w-full
-                h-[54px]
-
-                bg-[#415572]
-
-                rounded-full
-
-                px-6
-
-                text-white
-
-                outline-none
-              "
+              name="name" /* <-- REQUIRED for data to send */
+              required
+              className="w-full h-[54px] bg-[#415572] rounded-full px-6 text-white outline-none"
             />
           </div>
 
@@ -433,23 +417,11 @@ function App() {
             <label className="text-white text-[16px] mb-3 block">
               Email Id*
             </label>
-
             <input
               type="email"
-              className="
-                w-full
-                h-[54px]
-
-                bg-[#415572]
-
-                rounded-full
-
-                px-6
-
-                text-white
-
-                outline-none
-              "
+              name="email" /* <-- REQUIRED */
+              required
+              className="w-full h-[54px] bg-[#415572] rounded-full px-6 text-white outline-none"
             />
           </div>
 
@@ -462,23 +434,11 @@ function App() {
             <label className="text-white text-[16px] mb-3 block">
               Company*
             </label>
-
             <input
               type="text"
-              className="
-                w-full
-                h-[54px]
-
-                bg-[#415572]
-
-                rounded-full
-
-                px-6
-
-                text-white
-
-                outline-none
-              "
+              name="company" /* <-- REQUIRED */
+              required
+              className="w-full h-[54px] bg-[#415572] rounded-full px-6 text-white outline-none"
             />
           </div>
 
@@ -486,23 +446,11 @@ function App() {
             <label className="text-white text-[16px] mb-3 block">
               City*
             </label>
-
             <input
               type="text"
-              className="
-                w-full
-                h-[54px]
-
-                bg-[#415572]
-
-                rounded-full
-
-                px-6
-
-                text-white
-
-                outline-none
-              "
+              name="city" /* <-- REQUIRED */
+              required
+              className="w-full h-[54px] bg-[#415572] rounded-full px-6 text-white outline-none"
             />
           </div>
 
@@ -510,63 +458,40 @@ function App() {
 
         {/* MESSAGE */}
         <div>
-
           <label className="text-white text-[16px] mb-3 block">
             Your Message*
           </label>
-
           <textarea
+            name="message" /* <-- REQUIRED */
+            required
             rows="5"
-            className="
-              w-full
-
-              bg-[#415572]
-
-              rounded-[22px]
-
-              px-6
-              py-5
-
-              text-white
-
-              outline-none
-              resize-none
-            "
+            className="w-full bg-[#415572] rounded-[22px] px-6 py-5 text-white outline-none resize-none"
           />
-
         </div>
 
         {/* BUTTON */}
         <button
+          type="submit" /* <-- Tells the form this is the trigger button */
           className="
             mt-[10px]
-
             px-[28px]
             h-[54px]
-
-            bg-[#F28E38]
-
+            bg-[#f98d3d]
             rounded-full
-
             text-white
             text-[18px]
             font-bold
             tracking-[1px]
-
             flex
             items-center
             gap-3
-
             hover:scale-[1.03]
             transition-all
             duration-300
           "
         >
           SUBMIT
-
-          <span className="text-[22px]">
-            ↗
-          </span>
+          <span className="text-[22px]">↗</span>
         </button>
 
       </form>
@@ -599,7 +524,7 @@ function App() {
       "
     >
       Copyright © 2026{" "}
-      <span className="text-[#F28E38]">
+      <span className="text-[#f98d3d]">
         Rishika Jain.
       </span>{" "}
       All Rights Reserved.

@@ -31,7 +31,7 @@ export function Education() {
   ];
 
   return (
-    <section className="relative w-full bg-[#F5F1EB] overflow-hidden py-14 font-urbanist">
+    <section className="relative w-full bg-[#fff8f3] overflow-hidden py-14 font-urbanist">
 
       {/* BOTTOM LEFT SHAPE */}
       <div
@@ -41,7 +41,7 @@ export function Education() {
           bottom-0
           w-[300px]
           h-[120px]
-          bg-[#F7E1D4]
+          bg-[#ffebde]
           rounded-tr-[40px]
           z-0
         "
@@ -53,7 +53,7 @@ export function Education() {
           relative
           max-w-[1300px]
           mx-auto
-          bg-[#0D2748]
+          bg-[#162a42]
           rounded-[42px]
           px-[40px]
           lg:px-[72px]
@@ -113,7 +113,7 @@ export function Education() {
             h-[24px]
 
             rounded-full
-            bg-[#0D2748]
+            bg-[#162a42]
 
             items-center
             justify-center
@@ -167,7 +167,7 @@ export function Education() {
               h-[24px]
 
               rounded-full
-              bg-[#0D2748]
+              bg-[#162a42]
 
               items-center
               justify-center
@@ -237,7 +237,7 @@ export function Education() {
                     className="
                       w-full
                       h-[58px]
-                      bg-[#0D2748]
+                      bg-[#162a42]
                       border-[3px]
                       border-[#F28E38]
                       rounded-full

@@ -9,7 +9,7 @@ import achievement5 from "../assets/achievements5.jpeg";
 export default function Achievements() {
 
   return (
-    <section className="relative w-full bg-[#F5F1EB] overflow-hidden font-urbanist">
+    <section className="relative w-full bg-[#fff8f3] overflow-hidden font-urbanist">
 
       {/* ================================================= */}
       {/* TOP SECTION */}
@@ -23,23 +23,23 @@ export default function Achievements() {
         {/* ================================================= */}
         
         {/* 1. Top Wide Block */}
-        <div className="absolute left-0 top-0 w-[300px] h-[120px] bg-[#F7E1D4] z-0" />
+        <div className="absolute left-0 top-0 w-[300px] h-[120px] bg-[#ffebde] z-0" />
         
 
         {/* 3. Narrow Pillar (Beside top images) */}
-        <div className="absolute left-0 top-[120px] w-[490px] h-[360px] bg-[#F7E1D4] rounded-br-[60px] rounded-tr-[60px] z-0" />
+        <div className="absolute left-0 top-[100px] w-[510px] h-[360px] bg-[#ffebde] rounded-br-[60px] rounded-tr-[60px] z-0" />
 
         {/* 4. Middle Inner Curve Mask (Creates flawless S-curve OUTWARD to wide pillar) */}
-        <div className="absolute left-[300px] top-[60px] w-[60px] h-[60px] bg-[#F7E1D4] z-0">
-          <div className="w-full h-full bg-[#F5F1EB] rounded-bl-[60px]" />
+        <div className="absolute left-[300px] top-[40px] w-[60px] h-[60px] bg-[#ffebde] z-0">
+          <div className="w-full h-full bg-[#fff8f3] rounded-bl-[60px]" />
         </div>
 
         {/* 5. Wide Pillar (Bulges out behind first certificate) */}
-        <div className="absolute left-25 top-[450px] w-[390px] h-[320px] bg-[#F7E1D4] rounded-tr-[80px] rounded-br-[80px] rounded-bl-[60px] z-0" />
+        <div className="absolute left-25 top-[450px] w-[415px] h-[210px] bg-[#ffebde] rounded-tr-[80px] rounded-br-[80px] rounded-bl-[60px] z-0" />
 
         {/* 6. Bottom Inner Curve Mask (Creates flawless S-curve INWARD to bottom pillar) */}
-        <div className="absolute left-[40px] top-[480px] w-[60px] h-[60px] bg-[#F7E1D4] z-0 rotate-90">
-          <div className="w-full h-full bg-[#F5F1EB] rounded-tl-[60px]" />
+        <div className="absolute left-[40px] top-[460px] w-[60px] h-[60px] bg-[#ffebde] z-0 rotate-90">
+          <div className="w-full h-full bg-[#fff8f3] rounded-tl-[60px]" />
         </div>
 
         {/* ================================================= */}
@@ -51,7 +51,7 @@ export default function Achievements() {
             relative
             z-20
             text-center
-            text-[#0D2748]
+            text-[#162a42]
             text-[56px]
             lg:text-[64px]
             leading-none
@@ -114,26 +114,26 @@ export default function Achievements() {
             z-20
             mt-[40px]
             text-center
-            text-[#0D2748]
+            text-[#162a42]
             text-[16px]
             lg:text-[20px]
             leading-[1.3]
             font-neue
           "
         >
-          Ranked 1st in Communication Design for both{" "}
           <span className="font-bold">
-            2nd
+          Academic Rank 1 -{" "}
+          </span>
+          Communication Design, 2nd & 3rd Year,
             <br />
-            and 3rd year
-          </span>{" "}
-          of the degree program.
+          {" "}
+          MIT School of Design.
         </p>
 
         {/* ORANGE DECORATIVE SPLASH SHAPES */}
         <div className="absolute right-[5%] bottom-[10%] z-10 flex flex-col items-end gap-[6px] rotate-[-15deg] opacity-90 hidden lg:flex">
           <div className="w-[80px] h-[35px] bg-[#F0B785] rounded-full translate-x-4" />
-          <div className="w-[140px] h-[55px] bg-[#F28E38] rounded-full" />
+          <div className="w-[140px] h-[55px] bg-[#f98d3d] rounded-full" />
         </div>
 
       </div>
@@ -148,37 +148,37 @@ export default function Achievements() {
         
 
         {/* ================================================= */}
-{/* RIGHT BACKGROUND SHAPE (Rotated 180 Degrees)      */}
-{/* ================================================= */}
+        {/* RIGHT BACKGROUND SHAPE (Rotated 180 Degrees)      */}
+        {/* ================================================= */}
 
-{/* The wrapper handles the rotation. We set it to the right wall. */}
-<div className="absolute right-10 -top-[80px] w-[490px] h-[770px] z-0 rotate-180 origin-center">
-  
-  {/* Notice these are the EXACT same shapes as your left side. 
-    Because the wrapper is rotated 180, 'left-0' physically becomes 'right-0', 
-    and 'top' becomes 'bottom'. The math does itself! 
-  */}
-  
-  {/* 1. Top Wide Block */}
-  <div className="absolute left-0 -top-50 w-[280px] h-[420px] bg-[#F7E1D4] rounded-tr-[80px] z-0" />
+        {/* The wrapper handles the rotation. We set it to the right wall. */}
+        <div className="absolute right-0 -top-[80px] w-[490px] h-[770px] z-0 rotate-180 origin-center">
+          
+          {/* Notice these are the EXACT same shapes as your left side. 
+            Because the wrapper is rotated 180, 'left-0' physically becomes 'right-0', 
+            and 'top' becomes 'bottom'. The math does itself! 
+          */}
+          
+          {/* 1. Top Wide Block */}
+          <div className="absolute left-0 -top-50 w-[500px] h-[420px] bg-[#ffebde] rounded-tr-[80px] z-0" />
 
-  {/* 2. Narrow Pillar */}
-  <div className="absolute left-0 top-[40px] w-[500px] h-[510px] bg-[#F7E1D4]  rounded-tr-[60px] z-0" />
+          {/* 2. Narrow Pillar */}
+          <div className="absolute left-0 top-[40px] w-[740px] h-[510px] bg-[#ffebde]  rounded-tr-[60px] z-0" />
 
-  {/* 3. Middle Inner Curve Mask */}
-  <div className="absolute left-[280px] -top-[20px] w-[60px] h-[60px] bg-[#F7E1D4] z-0">
-    <div className="w-full h-full bg-[#F5F1EB] rounded-bl-[60px]" />
-  </div>
+          {/* 3. Middle Inner Curve Mask */}
+          <div className="absolute left-[500px] -top-[20px] w-[60px] h-[60px] bg-[#ffebde] z-0">
+            <div className="w-full h-full bg-[#fff8f3] rounded-bl-[60px]" />
+          </div>
 
-  {/* 4. Wide Pillar */}
-  <div className="absolute left-15 top-[450px] w-[440px] h-[320px] bg-[#F7E1D4]  rounded-br-[80px] rounded-bl-[60px] z-0" />
+          {/* 4. Wide Pillar */}
+          <div className="absolute left-83 top-[420px] w-[410px] h-[320px] bg-[#ffebde]  rounded-br-[70px] rounded-bl-[70px] z-0" />
 
-  {/* 5. Bottom Inner Curve Mask */}
-  <div className="absolute left-[0px] top-[550px] w-[60px] h-[60px] bg-[#F7E1D4] z-0 rotate-90">
-    <div className="w-full h-full bg-[#F5F1EB] rounded-tl-[60px]" />
-  </div>
+          {/* 5. Bottom Inner Curve Mask */}
+          <div className="absolute left-68 top-[550px] w-[60px] h-[60px] bg-[#ffebde] z-0 rotate-90">
+            <div className="w-full h-full bg-[#fff8f3] rounded-tl-[70px]" />
+          </div>
 
-</div>
+        </div>
 
         {/* CERTIFICATE GRID */}
         <div
@@ -195,7 +195,7 @@ export default function Achievements() {
             items-center
             md:items-start
             gap-[50px]
-            lg:gap-[130px]
+            lg:gap-[30px]
             -top-7
           "
         >
@@ -205,37 +205,35 @@ export default function Achievements() {
           {/* ================================================= */}
 
           <div className="flex flex-col items-center">
-            {/* The wrapper binds the image and text to the same width! */}
+            {/* 1. IMAGE BOX: Kept exactly at w-[260px] so it doesn't move! */}
             <div className="w-[260px]">
               <img
-                src={achievement3}
-                alt="Certificate"
+                src={achievement4}
+                alt="Kathrang Copyright"
                 className="
                   w-full
-                  h-auto 
+                  h-auto
                   shadow-[0_10px_24px_rgba(0,0,0,0.08)]
                 "
               />
-              <p
-                className="
-                  mt-6
-                  text-[#0D2748]
-                  text-[18px]
-                  leading-[1.28]
-                  font-neue
-                  text-left
-                "
-              >
-                <span className="font-bold">
-                  Authored, copyrighted and
-                  secured trademark
-                </span>{" "}
-                the Brand Guidelines Book for{" "}
-                <span className="font-bold">
-                  ‘Kathrang’
-                </span>
-              </p>
             </div>
+
+            {/* 2. TEXT BOX: Completely independent and wider (w-[340px])! */}
+            <p
+              className="
+                w-[320px]
+                lg:w-[350px]
+                mt-6
+                text-[#162a42]
+                text-[17px]
+                leading-[1.4]
+                font-medium
+                font-neue
+                text-center
+              "
+            >
+              Sole author of the <span className="font-bold">Brand Guidelines<br/>for Kathrang</span> - a fully copyrighted<br/>identity system, independently<br/>produced from strategy to print.
+            </p>
           </div>
 
           {/* ================================================= */}
@@ -243,41 +241,7 @@ export default function Achievements() {
           {/* ================================================= */}
 
           <div className="flex flex-col items-center">
-            <div className="w-[260px]">
-              <img
-                src={achievement4}
-                alt="Trademark"
-                className="
-                  w-full
-                  h-auto
-                  shadow-[0_10px_24px_rgba(0,0,0,0.08)]
-                "
-              />
-              <p
-                className="
-                  mt-6
-                  text-[#0D2748]
-                  text-[18px]
-                  leading-[1.28]
-                  font-neue
-                  text-left
-                "
-              >
-                Secured{" "}
-                <span className="font-bold">
-                  trademark
-                </span>{" "}
-                for a game logo design
-              </p>
-            </div>
-          </div>
-
-          {/* ================================================= */}
-          {/* CARD 3 */}
-          {/* ================================================= */}
-
-          <div className="flex flex-col items-center">
-            {/* Slightly wider to match its natural aspect ratio */}
+            {/* 1. IMAGE BOX: Kept exactly at w-[300px] */}
             <div className="w-[300px]">
               <img
                 src={achievement5}
@@ -288,28 +252,27 @@ export default function Achievements() {
                   shadow-[0_10px_24px_rgba(0,0,0,0.08)]
                 "
               />
-              <p
-                className="
-                  mt-6
-                  text-[#0D2748]
-                  text-[18px]
-                  leading-[1.28]
-                  font-neue
-                  text-left
-                "
-              >
-                Selected for a{" "}
-                <span className="font-bold">
-                  13-week sponsored Wari Art
-                </span>{" "}
-                project to document Ravannachhaya puppetry through research,
-                videography, and storytelling.
-              </p>
             </div>
+
+            {/* 2. TEXT BOX: Completely independent and wider! */}
+            <p
+              className="
+                w-[330px]
+                lg:w-[360px]
+                mt-6
+                text-[#162a42]
+                text-[17px]
+                leading-[1.4]
+                font-neue
+                font-medium
+                text-center
+              "
+            >
+              Selected for a <span className="font-bold">13-week sponsored<br/>documentation project</span> - conducting field<br/>research, videography, and narrative design<br/>to preserve the endangered Ravannachhaya<br/>puppetry tradition.
+            </p>
           </div>
 
         </div>
-
       </div>
 
       {/* ================================================= */}
@@ -324,7 +287,7 @@ export default function Achievements() {
 
           <h2
             className="
-              text-[#0D2748]
+              text-[#162a42]
               text-[36px]
               lg:text-[40px]
               leading-[1.3]
@@ -336,7 +299,7 @@ export default function Achievements() {
 
             <br className="hidden md:block" />
 
-            <span className="text-[#F28E38] font-bold text-[62px]">
+            <span className="text-[#f98d3d] font-bold text-[62px]">
               Strategic Creative
             </span>
 
