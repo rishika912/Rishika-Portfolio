@@ -393,7 +393,7 @@ function App() {
       {/* FORM */}
       {/* UPDATE: Added action and method. Replace YOUR_FORM_ID with your Formspree ID */}
       <form 
-        action="https://formspree.io/f/YOUR_FORM_ID" 
+        action="https://formspree.io/f/mykvpzbo" 
         method="POST" 
         className="space-y-[24px]"
       >
