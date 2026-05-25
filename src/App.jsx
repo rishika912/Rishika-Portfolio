@@ -72,7 +72,8 @@ function App() {
               </div>
 
               {/* SECTIONS */}
-              <Hero />
+              {/* Passed setView here so the Portfolio button works! */}
+              <Hero setView={setView} />
               <FeaturedProjects />
 
             </div>
@@ -391,7 +392,6 @@ function App() {
       </h3>
 
       {/* FORM */}
-      {/* UPDATE: Added action and method. Replace YOUR_FORM_ID with your Formspree ID */}
       <form 
         action="https://formspree.io/f/mykvpzbo" 
         method="POST" 
@@ -407,7 +407,7 @@ function App() {
             </label>
             <input
               type="text"
-              name="name" /* <-- REQUIRED for data to send */
+              name="name" 
               required
               className="w-full h-[54px] bg-[#415572] rounded-full px-6 text-white outline-none"
             />
@@ -419,7 +419,7 @@ function App() {
             </label>
             <input
               type="email"
-              name="email" /* <-- REQUIRED */
+              name="email" 
               required
               className="w-full h-[54px] bg-[#415572] rounded-full px-6 text-white outline-none"
             />
@@ -436,7 +436,7 @@ function App() {
             </label>
             <input
               type="text"
-              name="company" /* <-- REQUIRED */
+              name="company" 
               required
               className="w-full h-[54px] bg-[#415572] rounded-full px-6 text-white outline-none"
             />
@@ -448,7 +448,7 @@ function App() {
             </label>
             <input
               type="text"
-              name="city" /* <-- REQUIRED */
+              name="city" 
               required
               className="w-full h-[54px] bg-[#415572] rounded-full px-6 text-white outline-none"
             />
@@ -462,7 +462,7 @@ function App() {
             Your Message*
           </label>
           <textarea
-            name="message" /* <-- REQUIRED */
+            name="message" 
             required
             rows="5"
             className="w-full bg-[#415572] rounded-[22px] px-6 py-5 text-white outline-none resize-none"
@@ -471,7 +471,7 @@ function App() {
 
         {/* BUTTON */}
         <button
-          type="submit" /* <-- Tells the form this is the trigger button */
+          type="submit" 
           className="
             mt-[10px]
             px-[28px]

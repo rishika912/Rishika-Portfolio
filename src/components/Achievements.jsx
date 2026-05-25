@@ -130,11 +130,21 @@ export default function Achievements() {
           MIT School of Design.
         </p>
 
-        {/* ORANGE DECORATIVE SPLASH SHAPES */}
-        <div className="absolute right-[5%] bottom-[10%] z-10 flex flex-col items-end gap-[6px] rotate-[-15deg] opacity-90 hidden lg:flex">
-          <div className="w-[80px] h-[35px] bg-[#F0B785] rounded-full translate-x-4" />
-          <div className="w-[140px] h-[55px] bg-[#f98d3d] rounded-full" />
-        </div>
+        {/* CUSTOM LOGO SWOOSH DECORATION (Perfected Edition) */}
+        <svg
+          width="160"
+          height="160"
+          viewBox="0 0 100 100"
+          fill="#f0b785"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute right-[19%] bottom-[30%] z-10 opacity-90 hidden lg:block rotate-[-15deg] hover:scale-105 transition-transform duration-500" 
+        >
+          {/* Top Swoosh (Perfectly rounded top bulb) */}
+          <path d="M 20 62 C 35 45 45 35 52 20 A 14 14 0 0 1 74 34 C 60 50 45 58 20 62 Z" />
+          
+          {/* Bottom Swoosh (Noticeably thicker/heavier body) */}
+          <path d="M 12 78 C 45 78 60 60 75 40 A 16 16 0 0 1 96 62 C 75 88 45 92 12 78 Z" />
+        </svg>
 
       </div>
 

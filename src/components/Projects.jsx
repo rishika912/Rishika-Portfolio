@@ -145,7 +145,7 @@ export default function Projects() {
   const currentProjects = activeTab === "Visual Design" ? visualDesignProjects : uiUxProjects;
 
   return (
-    <section className="pt-4 pb-16 w-full bg-[#fff8f3] font-urbanist overflow-hidden">
+    <section id="project" className="pt-4 pb-16 w-full bg-[#fff8f3] font-urbanist overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6">
         
         {/* ================================================= */}

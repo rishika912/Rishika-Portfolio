@@ -1,8 +1,39 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import softwareBar from "../assets/software-bar.png";
 
 export default function CoreSkills() {
 
+  // =======================================================
+  // SCROLL TRIGGER LOGIC (Lag-Free GPU Optimized)
+  // =======================================================
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Instead of using React state (which causes laggy re-renders), 
+        // we directly attach a CSS class to the DOM element!
+        if (entry.isIntersecting) {
+          sectionRef.current.classList.add("trigger-animations");
+        } else {
+          sectionRef.current.classList.remove("trigger-animations");
+        }
+      },
+      { threshold: 0.15 } // Triggers when 15% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  // =======================================================
+  // DATA
+  // =======================================================
   const floatingSkills = [
     { name: "Typography", dark: false, rotate: "-20deg", left: "135px", bottom: "20px", zIndex: 10 },
     { name: "Wayfinding", dark: true, rotate: "-10deg", left: "260px", bottom: "95px", zIndex: 20 },
@@ -15,16 +46,34 @@ export default function CoreSkills() {
     { name: "Environmental Graphics", dark: true, rotate: "-14deg", left: "890px", bottom: "54px", zIndex: 30 },
   ];
 
-  const adobeApps = [
-    { label: "Id", bg: "#49021F", border: "#FF2D7A", text: "#FF4C8D", shadow: "#FF2D7A55" },
-    { label: "Ae", bg: "#27155E", border: "#8D84FF", text: "#C6BEFF", shadow: "#8D84FF55" },
-    { label: "Ai", bg: "#300000", border: "#FFB000", text: "#FF9A00", shadow: "#FFB00055" },
-    { label: "Ps", bg: "#001E36", border: "#31A8FF", text: "#31A8FF", shadow: "#31A8FF55" },
-    { label: "Pr", bg: "#27155E", border: "#8D84FF", text: "#C6BEFF", shadow: "#8D84FF55" },
-  ];
-
   return (
-    <section className="w-full bg-[#fff8f3] overflow-hidden font-ginder pt-10 pb-0">
+    // We attach the ref here. The observer will add the "trigger-animations" class to this section!
+    <section ref={sectionRef} className="w-full bg-[#fff8f3] overflow-hidden font-ginder pt-10 pb-0">
+
+      {/* ======================================================= */}
+      {/* CUSTOM DROP ANIMATION (Hardware Accelerated) */}
+      {/* ======================================================= */}
+      <style>
+        {`
+          @keyframes dropIn {
+            0% { opacity: 0; transform: translateY(-300px); }
+            70% { opacity: 1; transform: translateY(10px); }
+            85% { transform: translateY(-3px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          
+          .anim-drop-pill {
+            opacity: 0;
+            /* will-change tells the GPU to prepare for animation, removing lag entirely */
+            will-change: transform, opacity; 
+          }
+
+          /* The animation ONLY fires when the section gets this class */
+          .trigger-animations .anim-drop-pill {
+            animation: dropIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          }
+        `}
+      </style>
 
       <div className="relative w-full h-[380px] bg-[#f98d3d] overflow-hidden">
 
@@ -51,25 +100,22 @@ export default function CoreSkills() {
             />
           </div>
 
-          {/* SOFTWARE BAR IMAGE */}
-            <img
-              src={softwareBar}
-              alt="Software Bar"
-              className="
-                absolute
-                right-[20px]
-                lg:right-[160px]
-                top-[0px]
-
-                w-[670px]
-                h-[110px]
-
-                object-fill
-                z-20
-                select-none
-                pointer-events-none
-              "
-            />
+          <img
+            src={softwareBar}
+            alt="Software Bar"
+            className="
+              absolute
+              right-[20px]
+              lg:right-[160px]
+              top-[0px]
+              w-[670px]
+              h-[110px]
+              object-fill
+              z-20
+              select-none
+              pointer-events-none
+            "
+          />
             
         </div>
 
@@ -83,40 +129,50 @@ export default function CoreSkills() {
           </h2>
 
           <div className="absolute inset-0 pointer-events-auto -translate-x-13">
-            {floatingSkills.map((skill) => (
+            {floatingSkills.map((skill, index) => (
+              
+              /* OUTER WRAPPER: Now purely driven by CSS, no React state re-rendering! */
               <div
                 key={skill.name}
-                className="
-                  absolute
-                  rounded-full
-                  px-6
-                  pt-[14px]
-                  pb-[6px]
-                  text-[20px]
-                  lg:text-[22px]
-                  leading-none
-                  font-medium
-                  whitespace-nowrap
-                  shadow-[0_8px_16px_rgba(0,0,0,0.12)]
-                  hover:scale-[1.04]
-                  transition-transform
-                  duration-300
-                  flex
-                  items-center
-                  justify-center
-                  cursor-pointer
-                  tracking-[1px]
-                "
+                className="absolute anim-drop-pill"
                 style={{
                   left: skill.left,
-                  bottom: skill.bottom, 
-                  transform: `rotate(${skill.rotate})`,
-                  background: skill.dark ? "#162a42" : "#fff8f3",
-                  color: skill.dark ? "#fff8f3" : "#162a42",
+                  bottom: skill.bottom,
                   zIndex: skill.zIndex,
+                  animationDelay: `${0.2 + index * 0.1}s` 
                 }}
               >
-                {skill.name}
+                
+                {/* INNER PILL */}
+                <div
+                  className="
+                    rounded-full
+                    px-6
+                    pt-[14px]
+                    pb-[6px]
+                    text-[20px]
+                    lg:text-[22px]
+                    leading-none
+                    font-medium
+                    whitespace-nowrap
+                    shadow-[0_8px_16px_rgba(0,0,0,0.12)]
+                    hover:scale-[1.04]
+                    transition-transform
+                    duration-300
+                    flex
+                    items-center
+                    justify-center
+                    cursor-pointer
+                    tracking-[1px]
+                  "
+                  style={{
+                    transform: `rotate(${skill.rotate})`,
+                    background: skill.dark ? "#162a42" : "#fff8f3",
+                    color: skill.dark ? "#fff8f3" : "#162a42",
+                  }}
+                >
+                  {skill.name}
+                </div>
               </div>
             ))}
           </div>

@@ -90,7 +90,7 @@ export default function FeaturedProjects() {
             {/* LEFT CONTENT */}
             <div className="w-full lg:w-[47%] px-10 lg:px-[70px] pt-[78px] pb-20 flex flex-col justify-between translate-x-15">
               <div>
-                <h2 className="text-white text-[62px] leading-[0.95] font-causten translate-y-8">
+                <h2 className="text-white text-[62px] leading-[0.95] font-ginder translate-y-8">
                   Featured Projects
                 </h2>
 
