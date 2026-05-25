@@ -4,22 +4,21 @@ import softwareBar from "../assets/software-bar.png";
 export default function CoreSkills() {
 
   // =======================================================
-  // SCROLL TRIGGER LOGIC (Lag-Free GPU Optimized)
+  // SCROLL TRIGGER LOGIC
   // =======================================================
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Instead of using React state (which causes laggy re-renders), 
-        // we directly attach a CSS class to the DOM element!
         if (entry.isIntersecting) {
           sectionRef.current.classList.add("trigger-animations");
         } else {
           sectionRef.current.classList.remove("trigger-animations");
         }
       },
-      { threshold: 0.15 } // Triggers when 15% of the section is visible
+      // CHANGED: Now waits until 50% of the section is visible!
+      { threshold: 0.5 } 
     );
 
     if (sectionRef.current) {
@@ -47,11 +46,10 @@ export default function CoreSkills() {
   ];
 
   return (
-    // We attach the ref here. The observer will add the "trigger-animations" class to this section!
     <section ref={sectionRef} className="w-full bg-[#fff8f3] overflow-hidden font-ginder pt-10 pb-0">
 
       {/* ======================================================= */}
-      {/* CUSTOM DROP ANIMATION (Hardware Accelerated) */}
+      {/* CUSTOM DROP ANIMATION */}
       {/* ======================================================= */}
       <style>
         {`
@@ -64,11 +62,9 @@ export default function CoreSkills() {
           
           .anim-drop-pill {
             opacity: 0;
-            /* will-change tells the GPU to prepare for animation, removing lag entirely */
             will-change: transform, opacity; 
           }
 
-          /* The animation ONLY fires when the section gets this class */
           .trigger-animations .anim-drop-pill {
             animation: dropIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
           }
@@ -131,7 +127,6 @@ export default function CoreSkills() {
           <div className="absolute inset-0 pointer-events-auto -translate-x-13">
             {floatingSkills.map((skill, index) => (
               
-              /* OUTER WRAPPER: Now purely driven by CSS, no React state re-rendering! */
               <div
                 key={skill.name}
                 className="absolute anim-drop-pill"
@@ -139,11 +134,11 @@ export default function CoreSkills() {
                   left: skill.left,
                   bottom: skill.bottom,
                   zIndex: skill.zIndex,
-                  animationDelay: `${0.2 + index * 0.1}s` 
+                  /* CHANGED: Base delay bumped to 0.5s so it waits just a bit longer */
+                  animationDelay: `${0.5 + index * 0.12}s` 
                 }}
               >
                 
-                {/* INNER PILL */}
                 <div
                   className="
                     rounded-full
