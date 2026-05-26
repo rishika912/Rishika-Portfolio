@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export function Education() {
+
+  // =======================================================
+  // SCROLL TRIGGER LOGIC (Lag-Free)
+  // =======================================================
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sectionRef.current.classList.add("trigger-timeline");
+        } else {
+          sectionRef.current.classList.remove("trigger-timeline");
+        }
+      },
+      { threshold: 0.3 } // Triggers when 30% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
 
   const educationData = [
     {
@@ -11,7 +37,6 @@ export function Education() {
         { label: "Percentage:", value: "91.8 %" },
       ],
     },
-
     {
       year: "2022",
       title: "12th Commerce | Kendriya\nVidyalaya, Bhawanipatna",
@@ -20,7 +45,6 @@ export function Education() {
         { label: "Percentage:", value: "89 %" },
       ],
     },
-
     {
       year: "2022 - 26",
       title: "Bachelor of Design\n(Communication Design)\nMIT School of Design",
@@ -31,7 +55,56 @@ export function Education() {
   ];
 
   return (
-    <section className="relative w-full bg-[#fff8f3] overflow-hidden py-14 font-urbanist">
+    <section ref={sectionRef} className="relative w-full bg-[#fff8f3] overflow-hidden py-14 font-urbanist">
+
+      {/* ======================================================= */}
+      {/* TIMELINE ANIMATIONS */}
+      {/* ======================================================= */}
+      <style>
+        {`
+          @keyframes drawLine {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+          }
+          @keyframes fadeDrop {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes popScale {
+            from { opacity: 0; transform: scale(0); }
+            to { opacity: 1; transform: scale(1); }
+          }
+
+          /* The Line grows from left to right */
+          .anim-line {
+            transform-origin: left;
+            transform: scaleX(0);
+            will-change: transform;
+          }
+          .trigger-timeline .anim-line {
+            animation: drawLine 1.4s linear forwards;
+          }
+
+          /* The Boxes drop down */
+          .anim-box {
+            opacity: 0;
+            will-change: transform, opacity;
+          }
+          .trigger-timeline .anim-box {
+            animation: fadeDrop 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          }
+
+          /* The Dots pop in */
+          .anim-dot {
+            opacity: 0;
+            will-change: transform, opacity;
+          }
+          .trigger-timeline .anim-dot {
+            /* Gives it a slight bouncy pop */
+            animation: popScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+          }
+        `}
+      </style>
 
       {/* BOTTOM LEFT SHAPE */}
       <div
@@ -83,9 +156,7 @@ export function Education() {
         {/* TIMELINE AREA */}
         <div className="relative mt-[58px]">
 
-          {/* CONNECTING LINE 
-              hidden on mobile so it doesn't break the stacked layout.
-          */}
+          {/* CONNECTING LINE */}
           <div
             className="
               hidden md:block
@@ -94,64 +165,39 @@ export function Education() {
               left-[27%]
               right-[27%]
               h-[1.5px]
-              bg-white
               z-0
             "
-          />
+          >
+            {/* The actual line that animates */}
+            <div 
+              className="w-full h-full bg-white anim-line" 
+              style={{ animationDelay: "0.8s" }} 
+            />
+          </div>
 
           {/* LEFT DOT */}
           <div
-          className="
-            hidden md:flex
-            absolute
-            top-[29px]
-            left-[27.50%]
-            -translate-x-1/2
-            -translate-y-1/2
-
-            w-[28px]
-            h-[24px]
-
-            rounded-full
-            bg-[#162a42]
-
-            items-center
-            justify-center
-
-            z-10
-          "
-        >
-
-          {/* WHITE RING */}
-          <div
             className="
-              w-[18px]
-              h-[18px]
-
-              rounded-full
-
-              border-[2px]
-              border-white
-
-              flex
-              items-center
-              justify-center
+              hidden md:flex
+              absolute
+              top-[29px]
+              left-[27.50%]
+              -translate-x-1/2
+              -translate-y-1/2
+              z-10
             "
           >
-
-            {/* ORANGE DOT */}
-            <div
-              className="
-                w-[11px]
-                h-[11px]
-
-                rounded-full
-                bg-[#F28E38]
-              "
-            />
-
+            <div 
+              className="w-[28px] h-[24px] rounded-full bg-[#162a42] flex items-center justify-center anim-dot"
+              style={{ animationDelay: "0.8s" }}
+            >
+              {/* WHITE RING */}
+              <div className="w-[18px] h-[18px] rounded-full border-[2px] border-white flex items-center justify-center">
+                {/* ORANGE DOT */}
+                <div className="w-[11px] h-[11px] rounded-full bg-[#F28E38]" />
+              </div>
+            </div>
           </div>
-        </div>
 
           {/* RIGHT DOT */}
           <div
@@ -162,48 +208,18 @@ export function Education() {
               left-[72.50%]
               -translate-x-1/2
               -translate-y-1/2
-
-              w-[24px]
-              h-[24px]
-
-              rounded-full
-              bg-[#162a42]
-
-              items-center
-              justify-center
-
               z-10
             "
           >
-
-            {/* WHITE RING */}
-            <div
-              className="
-                w-[18px]
-                h-[18px]
-
-                rounded-full
-
-                border-[2px]
-                border-white
-
-                flex
-                items-center
-                justify-center
-              "
+            <div 
+              className="w-[24px] h-[24px] rounded-full bg-[#162a42] flex items-center justify-center anim-dot"
+              style={{ animationDelay: "2.1s" }}
             >
-
-              {/* ORANGE DOT */}
-              <div
-                className="
-                  w-[11px]
-                  h-[11px]
-
-                  rounded-full
-                  bg-[#F28E38]
-                "
-              />
-
+              {/* WHITE RING */}
+              <div className="w-[18px] h-[18px] rounded-full border-[2px] border-white flex items-center justify-center">
+                {/* ORANGE DOT */}
+                <div className="w-[11px] h-[11px] rounded-full bg-[#F28E38]" />
+              </div>
             </div>
           </div>
 
@@ -219,17 +235,15 @@ export function Education() {
               md:gap-0
             "
           >
-
             {educationData.map((item, index) => (
+              
+              /* BOX ANIMATION WRAPPER: Staggers the boxes falling in sync with the line */
               <div
                 key={index}
-                className="flex flex-col items-center" /* Center the wrapper in the column */
+                className="flex flex-col items-center anim-box" 
+                style={{ animationDelay: `${0.3 + index * 1.0}s` }}
               >
 
-                {/* ALIGNMENT WRAPPER: 
-                    Matches the width of the pill (200px) so the text naturally 
-                    starts exactly at the pill's left edge. 
-                */}
                 <div className="w-[200px] flex flex-col relative z-10">
 
                   {/* YEAR PILL */}
@@ -252,10 +266,7 @@ export function Education() {
                     {item.year}
                   </div>
 
-                  {/* CONTENT 
-                      w-max allows the text to naturally overflow the 200px width 
-                      if needed, while keeping it permanently left-aligned to the pill! 
-                  */}
+                  {/* CONTENT */}
                   <div className="mt-[18px] w-max">
 
                     <h3
@@ -272,7 +283,6 @@ export function Education() {
                     </h3>
 
                     <div className="space-y-[2px]">
-
                       {item.details.map((detail, i) => (
                         <p
                           key={i}
@@ -289,7 +299,6 @@ export function Education() {
                           </span>
                         </p>
                       ))}
-
                     </div>
 
                   </div>

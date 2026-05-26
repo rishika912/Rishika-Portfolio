@@ -45,20 +45,10 @@ export default function Clients() {
             className="
             flex-shrink-0
             
-
             w-[2000px]
-h-[240px]
-max-w-none
-object-cover
-
-            grayscale
-            opacity-80
-
-            hover:grayscale-0
-            hover:opacity-100
-
-            transition-all
-            duration-500
+            h-[240px]
+            max-w-none
+            object-cover
 
             select-none
           "
@@ -73,18 +63,9 @@ object-cover
             flex-shrink-0
 
             w-[2000px]
-h-[240px]
-max-w-none
-object-cover
-
-            grayscale
-            opacity-80
-
-            hover:grayscale-0
-            hover:opacity-100
-
-            transition-all
-            duration-500
+            h-[240px]
+            max-w-none
+            object-cover
 
             select-none
           "
