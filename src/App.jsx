@@ -16,6 +16,9 @@ import resumePdf from './assets/rishika jain resume.pdf';
 
 function App() {
   const [view, setView] = useState('rishika');
+  
+  // NEW STATE: Tracks if the user decided to bypass the mobile warning
+  const [dismissWarning, setDismissWarning] = useState(false);
 
   // THE DUAL-ACTION FUNCTION
   const handleResumeClick = () => {
@@ -31,40 +34,56 @@ function App() {
   return (
     <>
       {/* ======================================================= */}
-      {/* MOBILE OVERLAY (Only visible on screens smaller than 'md') */}
+      {/* MOBILE OVERLAY (Dismissible) */}
       {/* ======================================================= */}
-      <div className="flex md:hidden min-h-screen bg-[#FFF8F3] flex-col items-center justify-center p-8 text-center font-urbanist relative overflow-hidden">
-        
-        {/* Decorative background shape */}
-        <div className="absolute top-[-50px] right-[-50px] w-[200px] h-[200px] bg-[#f98d3d] rounded-full opacity-20 blur-3xl z-0"></div>
-        <div className="absolute bottom-[-50px] left-[-50px] w-[200px] h-[200px] bg-[#1C2A43] rounded-full opacity-10 blur-3xl z-0"></div>
-
-        <div className="relative z-10 flex flex-col items-center">
-          {/* Animated Icon */}
-          <div className="w-20 h-20 bg-[#1C2A43] rounded-full flex items-center justify-center mb-6 shadow-xl animate-bounce">
-            <span className="text-white text-3xl">💻</span>
-          </div>
-
-          <h1 className="text-[#1C2A43] text-4xl font-ginder mb-4 leading-tight">
-            Hold that <br/> <span className="text-[#f98d3d]">thought!</span> ✨
-          </h1>
+      {!dismissWarning && (
+        <div className="flex md:hidden min-h-screen bg-[#FFF8F3] flex-col items-center justify-center p-8 text-center font-urbanist relative overflow-hidden z-50">
           
-          <p className="text-[#1C2A43] text-[18px] font-neue leading-relaxed max-w-[300px]">
-            My portfolio is currently getting a pixel-perfect polish for mobile screens. 
-            <br/><br/>
-            To get the full, animated experience right now, please view this on a <strong>desktop or laptop</strong>. See you there!
-          </p>
+          {/* Decorative background shape */}
+          <div className="absolute top-[-50px] right-[-50px] w-[200px] h-[200px] bg-[#f98d3d] rounded-full opacity-20 blur-3xl z-0"></div>
+          <div className="absolute bottom-[-50px] left-[-50px] w-[200px] h-[200px] bg-[#1C2A43] rounded-full opacity-10 blur-3xl z-0"></div>
 
-          <div className="mt-10 px-8 py-3 rounded-full border-[2px] border-[#1C2A43] text-[#1C2A43] font-bold text-[18px]">
-            Desktop View Required
+          <div className="relative z-10 flex flex-col items-center">
+            {/* Animated Icon */}
+            <div className="w-20 h-20 bg-[#1C2A43] rounded-full flex items-center justify-center mb-6 shadow-xl animate-bounce">
+              <span className="text-white text-3xl">💻</span>
+            </div>
+
+            <h1 className="text-[#1C2A43] text-4xl font-ginder mb-4 leading-tight">
+              Hold that <br/> <span className="text-[#f98d3d]">thought!</span> ✨
+            </h1>
+            
+            <p className="text-[#1C2A43] text-[18px] font-neue leading-relaxed max-w-[300px]">
+              My portfolio is currently getting a pixel-perfect polish for mobile screens. 
+              <br/><br/>
+              For the full, animated experience, please view this on a <strong>desktop or laptop</strong>.
+            </p>
+
+            {/* ACTION BUTTONS */}
+            <div className="mt-10 flex flex-col items-center gap-4 w-full">
+              
+              {/* Bypass Button: Triggers the state change to hide this screen */}
+              <button 
+                onClick={() => setDismissWarning(true)}
+                className="px-8 py-3 rounded-full bg-[#f98d3d] text-white font-bold text-[18px] hover:scale-105 transition-transform shadow-lg"
+              >
+                View Anyway
+              </button>
+
+              <span className="text-[#1C2A43] text-[14px] opacity-60 font-medium">
+                (Layout may look a bit funky!)
+              </span>
+
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* ======================================================= */}
-      {/* MAIN DESKTOP APP (Hidden on mobile, visible on 'md' and up) */}
+      {/* MAIN DESKTOP APP */}
       {/* ======================================================= */}
-      <div className="hidden md:block min-h-screen bg-[#FFF8F3] font-urbanist antialiased text-[#1C2A43]">
+      {/* DYNAMIC CLASS: If they dismissed the warning, force it to 'block' everywhere! */}
+      <div className={`${!dismissWarning ? 'hidden md:block' : 'block'} min-h-screen bg-[#FFF8F3] font-urbanist antialiased text-[#1C2A43]`}>
         
         <Navbar currentView={view} setView={setView} />
 
