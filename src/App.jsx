@@ -98,6 +98,39 @@ function App() {
 
                 {/* CONNECTED SCRIBBLE */}
                 <div className="hidden lg:block absolute right-[150px] top-[550px] scale-85 z-[25] -rotate-[25deg]">
+                  
+                  {/* CSS FOR THE LOOPING DRAW ANIMATION */}
+                  <style>
+                    {`
+                      @keyframes drawScribble {
+                        0% { stroke-dashoffset: -1; opacity: 0; }
+                        5% { opacity: 1; }
+                        65% { stroke-dashoffset: 0; opacity: 1; }
+                        85% { opacity: 1; }
+                        95% { opacity: 0; stroke-dashoffset: 0; }
+                        100% { opacity: 0; stroke-dashoffset: -1; }
+                      }
+                      
+                      @keyframes drawArrowHead {
+                        0%, 60% { stroke-dashoffset: 1; opacity: 0; }
+                        61% { opacity: 1; }
+                        70% { stroke-dashoffset: 0; opacity: 1; }
+                        85% { opacity: 1; }
+                        95% { opacity: 0; stroke-dashoffset: 0; }
+                        100% { opacity: 0; stroke-dashoffset: 1; }
+                      }
+
+                      .anim-scribble {
+                        stroke-dasharray: 1;
+                        animation: drawScribble 3.5s ease-in-out infinite;
+                      }
+
+                      .anim-arrow-head {
+                        stroke-dasharray: 1;
+                        animation: drawArrowHead 3.5s ease-in-out infinite;
+                      }
+                    `}
+                  </style>
 
                   <svg
                     width="250"
@@ -122,6 +155,8 @@ function App() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       fill="none"
+                      pathLength="1"
+                      className="anim-scribble"
                     />
 
                     {/* ARROW HEAD */}
@@ -133,6 +168,8 @@ function App() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         fill="none"
+                        pathLength="1"
+                        className="anim-arrow-head"
                       />
                     </g>
 
