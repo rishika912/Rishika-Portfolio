@@ -8,14 +8,29 @@ import project4 from "../assets/mega bloks.png";
 import project5 from "../assets/drop dead.png";
 import project6 from "../assets/Kathrang.png";
 
+// 2. Import your PDFs
+import ravanaPDF from "../assets/ravana project.pdf"; 
+import orenPDF from "../assets/oren project.pdf"; 
+import nivahaPDF from "../assets/nivaha project.pdf"; 
+import megaPDF from "../assets/Mega Bloks Redesign Project.pdf";
+import dropdeadPDF from "../assets/drop dead.pdf"; 
+import kathrangPDF from "../assets/Kathrang Branding Project.pdf"; 
+
 export default function FeaturedProjects() {
   // State for the carousel and scroll detection
   const [activeIndex, setActiveIndex] = useState(5); // Starts with Project 6 on top
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // The 6 image files
-  const projects = [project1, project2, project3, project4, project5, project6];
+  // Combine images and PDFs into a single linked array
+  const projectsData = [
+    { img: project1, pdf: ravanaPDF },
+    { img: project2, pdf: orenPDF },
+    { img: project3, pdf: nivahaPDF },
+    { img: project4, pdf: megaPDF },
+    { img: project5, pdf: dropdeadPDF },
+    { img: project6, pdf: kathrangPDF },
+  ];
 
   // OPTIMIZED: Uses GPU-Accelerated Translate instead of Right/Bottom, and lighter shadows
   const positionClasses = [
@@ -118,31 +133,50 @@ export default function FeaturedProjects() {
               <div className="relative w-[560px] h-[360px] scale-[1.1] lg:scale-[1.2] origin-center mt-10">
 
                 {/* Map through the 6 projects and automatically assign them positions */}
-                {projects.map((proj, i) => {
+                {projectsData.map((proj, i) => {
                   
                   // Math magic to cycle the positions perfectly!
                   const posIndex = ((i - activeIndex + 5) % 6 + 6) % 6;
+                  const isFrontCard = posIndex === 5; // True if it's the very top card
                   
                   return (
                     <div 
                       key={i}
-                      onClick={() => setActiveIndex(i)} 
+                      onClick={() => {
+                        if (isFrontCard) {
+                          // Open PDF if it's the top card
+                          window.open(proj.pdf, '_blank', 'noopener,noreferrer');
+                        } else {
+                          // Bring to front if it's a back card
+                          setActiveIndex(i);
+                        }
+                      }} 
                       className={`
                         absolute right-0 bottom-0 rounded-[18px]
                         transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] 
-                        cursor-pointer hover:scale-105 will-change-transform
+                        cursor-pointer hover:scale-105 will-change-transform group
                         ${positionClasses[posIndex]}
                       `}
                     >
+                      {/* FIX: Added transform-gpu and backface-visibility:hidden. 
+                        This forces the browser to calculate the rounded corners on the graphics card, 
+                        preventing the image from "breaking out" of the corners during hover animations!
+                      */}
                       <div 
-                        className={isVisible ? "animate-card" : "opacity-0"} 
+                        className={`relative w-[305px] h-[136px] overflow-hidden rounded-[18px] bg-white transform-gpu [backface-visibility:hidden] ${isVisible ? "animate-card" : "opacity-0"}`} 
                         style={{ animationDelay: `${posIndex * 0.15}s` }}
                       >
                         <img 
-                          src={proj} 
+                          src={proj.img} 
                           alt={`Featured Project ${i + 1}`} 
-                          className="w-[305px] h-[136px] object-cover rounded-[18px]" 
+                          className="w-full h-full object-cover" 
                         />
+                        
+                        {/* Hover Overlay - Clean blur with no button */}
+                        {isFrontCard && (
+                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm pointer-events-none" />
+                        )}
+
                       </div>
                     </div>
                   );
@@ -154,7 +188,7 @@ export default function FeaturedProjects() {
 
           {/* DYNAMIC INTERACTIVE DOTS */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-[11px] z-30">
-            {projects.map((_, i) => (
+            {projectsData.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActiveIndex(i)}
