@@ -11,16 +11,16 @@ import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import logo from "/logo.png";
 
+// 1. IMPORT YOUR NEW CURSOR HERE
+import CustomCursor from './components/CustomCursor'; 
+
 // IMPORT THE PDF HERE
 import resumePdf from './assets/rishika jain resume.pdf';
 
 function App() {
   const [view, setView] = useState('rishika');
-  
-  // NEW STATE: Tracks if the user decided to bypass the mobile warning
   const [dismissWarning, setDismissWarning] = useState(false);
 
-  // THE DUAL-ACTION FUNCTION
   const handleResumeClick = () => {
     window.open(resumePdf, '_blank');
     const link = document.createElement('a');
@@ -85,6 +85,9 @@ function App() {
       {/* DYNAMIC CLASS: If they dismissed the warning, force it to 'block' everywhere! */}
       <div className={`${!dismissWarning ? 'hidden md:block' : 'block'} min-h-screen bg-[#FFF8F3] font-urbanist antialiased text-[#1C2A43]`}>
         
+        {/* ADD THE CURSOR HERE */}
+        <CustomCursor />
+
         <Navbar currentView={view} setView={setView} />
 
         <main className="pt-16 pb-0">
