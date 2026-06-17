@@ -49,7 +49,7 @@ export function Education() {
       year: "2022 - 26",
       title: "Bachelor of Design\n(Communication Design)\nMIT School of Design",
       details: [
-        { label: "CGPA:", value: "8.56/10" },
+        { label: "CGPA:", value: "8.64/10" },
       ],
     },
   ];

@@ -1,6 +1,8 @@
 import React from 'react';
 import rishikaPortrait from '../assets/rishika-portrait.png';
 import resumePdf from '../assets/rishika jain resume.pdf'; 
+// IMPORT THE GRAD BOOK PDF HERE
+import gradBookPDF from '../assets/grad book.pdf';
 
 export default function Hero({ setView }) {
 
@@ -170,13 +172,15 @@ export default function Hero({ setView }) {
 
             <div className="flex items-center gap-2 bg-[#fff8f3] rounded-full p-0 ring-[8px] ring-[#fff8f3]">
 
-              {/* PORTFOLIO BUTTON */}
-              <button 
-                onClick={() => setView('projects')}
+              {/* PORTFOLIO BUTTON: Now an anchor tag linked to the gradBookPDF */}
+              <a 
+                href={gradBookPDF}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-2.5 rounded-full border-[1.5px] border-[#1C2A43] text-[#1C2A43] font-bold text-[25px] bg-[#fff8f3] flex items-center justify-center hover:bg-[#1C2A43] hover:text-[#fff8f3] hover:scale-105 transition-all duration-300 cursor-pointer"
               >
                 Portfolio
-              </button>
+              </a>
 
               {/* RESUME BUTTON */}
               <button 

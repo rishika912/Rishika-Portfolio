@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 
+// IMPORT THE PDF HERE
+import gradBookPDF from "../assets/grad book.pdf";
+
 export default function Experience() {
   const [expanded, setExpanded] = useState(false);
 
@@ -268,11 +271,12 @@ export default function Experience() {
           ))}
         </div>
 
-        {/* BUTTON */}
+        {/* BUTTONS (Changed to flex container with gap to hold both buttons side-by-side) */}
         <div 
-          className="flex justify-center mt-10 anim-exp-up"
+          className="flex justify-center flex-wrap gap-6 mt-10 anim-exp-up"
           style={{ animationDelay: "1.2s" }}
         >
+          {/* SEE MORE BUTTON */}
           <button
             onClick={() => setExpanded(!expanded)}
             className="bg-[#0D2748] text-white px-10 py-4 rounded-full text-[24px] leading-none hover:scale-[1.03] transition-all duration-300 flex items-center gap-3 font-causten font-bold tracking-[2px] shadow-lg"
@@ -282,6 +286,17 @@ export default function Experience() {
               ↓
             </span>
           </button>
+
+          {/* NEW PORTFOLIO BUTTON */}
+          <a
+            href={gradBookPDF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#f98d3d] text-white px-10 py-4 rounded-full text-[24px] leading-none hover:scale-[1.03] transition-all duration-300 flex items-center gap-3 font-causten font-bold tracking-[2px] shadow-lg"
+          >
+            Portfolio
+            <span className="text-[26px] leading-none mb-1">↗</span>
+          </a>
         </div>
 
       </div>
