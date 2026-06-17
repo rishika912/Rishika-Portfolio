@@ -2,7 +2,7 @@ import React from 'react';
 import rishikaPortrait from '../assets/rishika-portrait.png';
 import resumePdf from '../assets/rishika jain resume.pdf'; 
 // IMPORT THE GRAD BOOK PDF HERE
-import gradBookPDF from '../assets/grad book.pdf';
+import gradBookPDF from '../assets/grad-book.pdf';
 
 export default function Hero({ setView }) {
 
