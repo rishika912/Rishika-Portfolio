@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 // IMPORT THE PDF HERE
-import gradBookPDF from "../assets/grad-book.pdf";
+import gradBookPDF from "../assets/Grad-Book.pdf";
 
 export default function Experience() {
   const [expanded, setExpanded] = useState(false);
